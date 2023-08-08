@@ -1,0 +1,15 @@
+.imagenError{
+    margin-left: 50px;
+    height: 400px;
+}
+
+.title{
+    margin-left: 160px;
+    font-size: 100px;
+    color: white;
+    text-shadow: 5px 10px 5px rgba(0, 144, 254, 0.75);
+}
+
+.texto{
+    margin-left: 180px;
+}

@@ -1,38 +1,57 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import { getPokemon, getPokemonThenCatch} from '../../API/pokeapi'
+import { getPokemon, getPokemonThenCatch, getListaPokemon} from '../../API/pokeapi'
+import { useNavigate} from 'react-router-dom'
+import CartasPokemon from '../../Components/CartasPokemon/CartasPokemon';
 import './PaginaPrincipal.css';
 
 function PaginaPrincipal() {
 
-  const [pokemon, setPokemon] = useState<any[]>([]);
-    
-  async function loadPokemon(){
-        const datosPokemon = await getPokemon();
-        console.log("Pokemon:", datosPokemon);
-        setPokemon([datosPokemon]);
-    }
+  const [listaPokemon,setListaPokemon] = useState<any[]>([]);
+  const [listaPokemonData,setListaPokemonData] = useState<any[]>([]);
 
-    //datos del pokemon con la Promesa
-    const datosPoke = getPokemonThenCatch()
-    .then((datos)=>{
-      console.log("Datos de los pokemon con then y catch", datos)
-    })
-    .catch((error)=>{
-      return{
-        error:"Hubo un error al llamar al API utilizando Then y Catch",
-      };
-    });
+  //
+  async function loadPokemon(){
+
+    const datosListaPokemon = await getListaPokemon();
+    console.log("pokemon LISTA:",datosListaPokemon); 
+    setListaPokemon(datosListaPokemon.results);
+
+    }
 
 // Primero: la funcion a ejecutar & Segundo: Es el array de dependencias "lo que veo o escucho por cambios"
     useEffect(()=>{loadPokemon();
     },[]);
 
-console.log(pokemon);
+async function cargarPokemon(){
+  var listaTemoral = [];
+      for (let index = 0; index < listaPokemon.length; index++) {
+        const poke = listaPokemon[index];
+        const pokeData = await getPokemon(poke.name);
+        listaTemoral.push(pokeData);
+        console.log("MIS DATOOOOOS: ", pokeData)
+      }
+      setListaPokemonData(listaTemoral);
+}
+    useEffect(()=>{
+      cargarPokemon();
+    }, [listaPokemon]);
+
+    // Simulación
+    const navigate = useNavigate();
+
+    function irDetalles (id:number){
+      navigate("/pokemon/"+id)
+    }
 
   return (
     <div>
         <img src="./titulo.png" alt="" />
+        <ul>
+          {listaPokemon.map((pokemon,indice)=>(<CartasPokemon key={indice} name={pokemon.name}></CartasPokemon>))}
+          <li onClick={()=>{irDetalles(1)} }>Pokemon 1</li>
+          <li onClick={()=>{irDetalles(2)} }>Pokemon 2</li>
+        </ul>
     </div>
   )
 }
