@@ -34,5 +34,4 @@ export function getPokemonThenCatch() {
     return fetch(URLPokeApi + "pokemon/pikachu/").then(
         (response) => { return response.json() }
     )
-
 }

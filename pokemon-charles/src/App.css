@@ -1,12 +1,13 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 10s linear;
+    animation: App-logo-spin infinite 5s linear;
   }
 }
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -15,38 +16,28 @@
     transform: rotate(360deg);
   }
 }
-.head{
+
+/* .head{
   display: flex;
   justify-content: left;
-}
-.App{
+} */
+
+/* .App{
   background-image: url("https://i.imgur.com/2gfwG.jpg"); 
   background-repeat: repeat x;
   background-position: 0px 0px;
   background-size: cover;
 	animation: animatedBackground 10s linear infinite
 }
-  #pikachu {
-    position: relative;
-    left: -300px;
-    /* top: 275px; */
-    width: 130px;
-}
-#gengar {
-    position: relative;
-    left: 700px;
-    /* top: 280px; */
-    width: 130px;
-}
+
 @keyframes animatedBackground {
 	from { background-position: 100% 0; }
 	to { background-position: 0 0; }
-}
+} */
 
 /* ESTILOS PARA EL BOTON */
 .primary-button {
   font-family: 'Ropa Sans', sans-serif;
-     /* font-family: 'Valorant', sans-serif; */
   color: white;
   cursor: pointer;
   font-size: 13px;
@@ -106,6 +97,7 @@
   width: fit-content;
   height: fit-content;
   margin-left: 40px;
+  margin-bottom: 40px;
   }
 
   .button-borders:before {

@@ -24,15 +24,17 @@ function PaginaPrincipal() {
     },[]);
 
 async function cargarPokemon(){
-  var listaTemoral = [];
+  var listaTemporal: any[]=[];
       for (let index = 0; index < listaPokemon.length; index++) {
         const poke = listaPokemon[index];
-        const pokeData = await getPokemon(poke.name);
-        listaTemoral.push(pokeData);
-        console.log("MIS DATOOOOOS: ", pokeData)
+        const pokeData = await getPokemon(poke.name)
+       
+          console.log(pokeData);
+          listaTemporal.push(pokeData);
       }
-      setListaPokemonData(listaTemoral);
+      setListaPokemonData(listaTemporal);
 }
+
     useEffect(()=>{
       cargarPokemon();
     }, [listaPokemon]);
@@ -46,11 +48,16 @@ async function cargarPokemon(){
 
   return (
     <div>
-        <img src="./titulo.png" alt="" />
-        <ul>
-          {listaPokemon.map((pokemon,indice)=>(<CartasPokemon key={indice} name={pokemon.name}></CartasPokemon>))}
-          <li onClick={()=>{irDetalles(1)} }>Pokemon 1</li>
-          <li onClick={()=>{irDetalles(2)} }>Pokemon 2</li>
+        
+        <ul className='principal'>
+          {listaPokemonData.map((pokemon,indice)=>(<CartasPokemon 
+          key={indice} 
+          name={pokemon.name} 
+          img={pokemon.sprites.versions["generation-v"]["black-white"].front_default}
+          types={pokemon.types}></CartasPokemon>))}
+
+          {/* <li onClick={()=>{irDetalles(1)} }>Pokemon 1</li>
+          <li onClick={()=>{irDetalles(2)} }>Pokemon 2</li> */}
         </ul>
     </div>
   )
