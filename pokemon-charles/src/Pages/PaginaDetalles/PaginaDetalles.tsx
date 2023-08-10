@@ -1,5 +1,6 @@
 import React from 'react'
-import { useNavigate,useParams } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom';
+import './PaginaDetalles.css';
 
 function PaginaDetalles() {
 
@@ -12,8 +13,10 @@ function PaginaDetalles() {
 
     return (
     <div>
-        <h1>Pagina Detalles {id}</h1>
-        <button onClick={irInicio}>Ir a Inicio</button>
+        <h1>Stats {id}</h1>
+        <div className="button-borders">
+            <button onClick={irInicio} className="primary-button">GO BACK!</button>
+        </div>
     </div>
     )
 }

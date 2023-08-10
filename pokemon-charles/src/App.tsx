@@ -30,9 +30,10 @@ function App() {
         <img src={"./Pokeball.png"} className="App-logo" alt="Pokeball" />
         <RouterProvider router={router}></RouterProvider>
         </div>
-        <div className="button-borders">
-          <button className="primary-button">ATRAS</button>
-        </div>
+        {/* <div className="button-borders">
+        <button className="primary-button">BACK!</button>
+          <button className="primary-button">NEXT!</button>
+        </div> */}
     </div>
   );
 }

@@ -28,10 +28,17 @@ export async function getListaPokemon() {
     }
 }
 
-export function getPokemonThenCatch() {
+export async function getPokemonThenCatch() {
 
     //THEN hace la funcion de callback // Funcion a llamar cuando termine o llegue
     return fetch(URLPokeApi + "pokemon/pikachu/").then(
         (response) => { return response.json() }
     )
+}
+
+// Funcion para mostrar los demás pokemon
+export async function getUrlNextAndPrevius(url) {
+    const requestPokemon = await fetch(url);
+    const pokemonData = await requestPokemon.json();
+    return pokemonData;
 }
