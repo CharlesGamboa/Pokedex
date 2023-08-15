@@ -5,7 +5,7 @@
 
 .containerCard{
     width: 200px;
-    height: 350px;
+    height: 514px;
     margin: 20px;
     display: flex;
     align-items: center;
@@ -40,23 +40,6 @@
 
     background-color: black;
 }
-    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,143,38,1) 0%, rgba(150,126,197,1) 48%, rgba(0,255,222,1) 100%);
-    background-size: 300% 100%;
-    animation: gradient 5s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-} */
-
 
 .imagenPoke{
     width: 200px;
@@ -70,6 +53,18 @@
     font-size: 40px;
     color: rgb(189, 189, 189);
 }
+
+.containerStats{
+    list-style-type: none;
+    font-family:"idFont" ;
+    margin-left: -30px;
+    width: 100%;
+}
+
+.liStats{
+    background-color: rgba(193, 190, 190, 0.347);
+    border: solid 1px black;}
+
 .containerTypes{
     width: 100%;
     margin-top: 5px;
