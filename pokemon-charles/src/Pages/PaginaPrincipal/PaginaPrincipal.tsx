@@ -18,7 +18,7 @@ function PaginaPrincipal() {
   async function loadPokemon() {
 
     const datosListaPokemon = await getListaPokemon();
-    console.log("pokemon LISTA:", datosListaPokemon);
+    // console.log("pokemon LISTA:", datosListaPokemon);
     setListaPokemon(datosListaPokemon.results);
   }
 
@@ -83,7 +83,7 @@ function PaginaPrincipal() {
   //====================================== FUNCION FILTRAR POKEMON ========================================== 
   // ES EL BOTON DE BUSCAR POKEMON
   async function filtrarPokemon(event: any) {
-
+    
     event.preventDefault();
 
     if (buscarPokemon === "") {
@@ -100,13 +100,13 @@ function PaginaPrincipal() {
       setBuscarPokemon("");
     }
   }
-
   const handleBuscarPokemon = (event: any) => {
     setBuscarPokemon(event.target.value);
 
   };
 
   return (
+  //========================================= HTML =============================================
     <div>
       <div className='containerBuscar'>
         <form action="">

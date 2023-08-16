@@ -29,14 +29,14 @@ function CartasPokemon({name, img, types, id, hp, attack, defense, specialAtt, s
                     <img className="imagenPoke" src={img} alt="Pokemon"/>
                 </div>
             <h4 className='identificator'>#0{id}</h4>
-            <ul className='containerStats'>
+            {/* <ul className='containerStats'>
                 <li className='liStats'>HP: {hp}</li>
                 <li className='liStats'>ATTK: {attack}</li>
                 <li className='liStats'>DEF: {defense}</li>
                 <li className='liStats'>SPE.ATTK: {specialAtt}</li>
                 <li className='liStats'>SPE.DEF: {specialDef}</li>
                 <li className='liStats'>SPEED: {speed}</li>
-            </ul>
+            </ul> */}
         <div className='containerTypes'>
         <ul className='ul-types'>
             {

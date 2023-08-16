@@ -1,6 +1,7 @@
 .principal{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 .containerBuscar{
     width: 100%;
@@ -14,7 +15,7 @@
     background: transparent;
     border-radius: 4px;
     border: 1px solid #fe4567;
-    color: #0e0e0e;
+    color: #ffffff;
     animation: shake_541 0.14s 3;
   }
 

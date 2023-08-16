@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./PaginaDetalles.css";
 import { getEvolutionChain, getPokemon } from "../../API/pokeapi";
-import CartasPokemon from "../../Components/CartasPokemon/CartasPokemon";
+import CartasDetalles from "../../Components/CartasDetalles/CartasDetalles";
 
 function PaginaDetalles() {
 
@@ -18,7 +18,7 @@ function PaginaDetalles() {
     async function evoluciones() {
         const listadoEvoluciones = await getEvolutionChain(id);
         setListaEvoluciones(listadoEvoluciones);
-        console.log("ListadoEvoluciones: ", listadoEvoluciones);
+        // console.log("ListadoEvoluciones: ", listadoEvoluciones);
     }
 
     useEffect(() => {
@@ -46,8 +46,7 @@ function PaginaDetalles() {
     return (
         <div className="containerDetalles">
             <h2 className="tituloDetalles">Pokemon: {id}</h2>
-            <h1 className="tituloID">{}</h1>
-            <div className="containerSelectedCard">{poke && (<CartasPokemon
+            <div className="containerSelectedCard">{poke && (<CartasDetalles
                 funcionClick={irDetalles}
                 name={poke.name}
                 img={poke.sprites.other["official-artwork"].front_default}
@@ -59,12 +58,12 @@ function PaginaDetalles() {
                 specialAtt={poke.stats[3].base_stat}
                 specialDef={poke.stats[4].base_stat}
                 speed={poke.stats[5].base_stat}
-            ></CartasPokemon>)}
+            ></CartasDetalles>)}
             </div>
 
             <h2 className="tituloDetalles">Evolution Chain</h2>
             <div className="containerEvoChain">{listaEvoluciones.map((pokemon, indice) => (
-                <CartasPokemon
+                <CartasDetalles
                     funcionClick={irDetalles}
                     key={indice}
                     name={pokemon.name}
@@ -77,7 +76,7 @@ function PaginaDetalles() {
                     specialDef={pokemon.stats[4].base_stat}
                     speed={pokemon.stats[5].base_stat}
                     types={pokemon.types}
-                ></CartasPokemon>
+                ></CartasDetalles>
             ))}
             </div>
             <div className="button-borders">

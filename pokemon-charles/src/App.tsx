@@ -26,14 +26,9 @@ function App() {
   return (
     <div className="App">
       <div className='head'>
-      <img src="./titulo.png" alt="" />
-        <img src={"./Pokeball.png"} className="App-logo" alt="Pokeball" />
+      <img src="./PokedexLogo.webp" alt="" />
         <RouterProvider router={router}></RouterProvider>
         </div>
-        {/* <div className="button-borders">
-        <button className="primary-button">BACK!</button>
-          <button className="primary-button">NEXT!</button>
-        </div> */}
     </div>
   );
 }

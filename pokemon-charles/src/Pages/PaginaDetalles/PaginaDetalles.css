@@ -5,30 +5,27 @@
 
 .containerDetalles{
    width: 100%;
+}
 
+.containerSelectedCard{
+   display: flex;
+   justify-content: center;
+   margin-bottom: 30px;
 }
 
 .tituloDetalles{
    text-align: center;
    font-family: "idFont";
+   color: rgb(191, 189, 189);
    font-size: 50px;
-   background-color: gray;
+   background-image: url("../../../public/fondoLinea.webp");
    
-}
-.tituloID{
-   font-family: "idFont";
-}
-
-.containerSelectedCard{
-
-   display: flex;
-   justify-content: center;
-   margin-bottom: 40px;
 }
 
 .containerEvoChain{
    display: flex;
-   justify-content: space-evenly;
+   justify-content: center;
+   flex-wrap: wrap;
    margin-bottom: 40px;
 }
 
