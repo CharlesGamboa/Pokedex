@@ -5,6 +5,7 @@ import { useState } from "react";
 import "./PaginaDetalles.css";
 import { getEvolutionChain, getPokemon } from "../../API/pokeapi";
 import CartasDetalles from "../../Components/CartasDetalles/CartasDetalles";
+import Botones from "../../Components/Botones/Botones";
 
 function PaginaDetalles() {
 
@@ -12,7 +13,7 @@ function PaginaDetalles() {
     const [listaEvoluciones, setListaEvoluciones] = useState<any[]>([]);
     const [poke, setPoke] = useState<any>();
     const navigate = useNavigate();
-    const { id } = useParams();
+    const { id }: any = useParams();
 
 //================================== FUNCION PARA LA CADENA DE EVOLUCIONES ==================================
     async function evoluciones() {
@@ -45,7 +46,7 @@ function PaginaDetalles() {
 
     return (
         <div className="containerDetalles">
-            <h2 className="tituloDetalles">Pokemon: {id}</h2>
+            <h2 className="tituloDetalles">Pokemon</h2>
             <div className="containerSelectedCard">{poke && (<CartasDetalles
                 funcionClick={irDetalles}
                 name={poke.name}
@@ -60,6 +61,11 @@ function PaginaDetalles() {
                 speed={poke.stats[5].base_stat}
             ></CartasDetalles>)}
             </div>
+
+            {poke && <Botones
+                changeNext={()=>{irDetalles(parseInt(poke.id)+1)}}
+                changeBack={()=>{irDetalles(parseInt(poke.id)-1)}}
+                urlState={[poke.id<1010?id:undefined, poke.id===1?undefined:id]}></Botones>}
 
             <h2 className="tituloDetalles">Evolution Chain</h2>
             <div className="containerEvoChain">{listaEvoluciones.map((pokemon, indice) => (

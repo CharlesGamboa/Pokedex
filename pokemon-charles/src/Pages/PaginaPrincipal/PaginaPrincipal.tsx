@@ -96,6 +96,11 @@ function PaginaPrincipal() {
       if (listaPokemons.name || listaPokemons.id === buscarPokemon) {
         listaAux.push(listaPokemons);
       }
+      else {
+        window.location.reload();
+        alert ("No se encuentra ese Pokemon");
+        
+      }
       setListaPokemonData(listaAux);
       setBuscarPokemon("");
     }
